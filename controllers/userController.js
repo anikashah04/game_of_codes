@@ -81,3 +81,19 @@ export const deleteUser = async (req, res) => {
   }
 };
 
+// Logout current session
+export const logoutUser = async (req, res) => {
+  try {
+    const user = req.user; // set by auth middleware
+    const token = req.token;
+
+    // Remove the current token from the user's tokens array
+    user.tokens = user.tokens.filter(t => t.token !== token);
+    await user.save();
+
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (err) {
+    console.error("Logout error:", err);
+    res.status(500).json({ error: "Logout failed", details: err.message });
+  }
+};
