@@ -16,9 +16,9 @@ const courseSchema = new mongoose.Schema({
     enum:['Java','C','Python','WebDev','ML'],
     required:true
   },
-  list_of_games: [{ 
+  list_of_planets: [{ 
     type: mongoose.Schema.Types.ObjectId, 
-    ref: "Game" }], // references Games
+    ref: "Planet" }], // references Games
   // badgesAwarded: [{ 
   //   type: mongoose.Schema.Types.ObjectId, 
   //   ref: "Badge" }],

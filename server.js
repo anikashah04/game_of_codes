@@ -7,6 +7,7 @@ import gameRoutes from "./routes/gameRoutes.js";
 import progressRoutes from "./routes/progressRoutes.js";
 import courseRoutes from "./routes/coursesRoutes.js";
 import badgeRoutes from "./routes/badgeRoutes.js";
+import planetRoutes from "./routes/planetRoutes.js";
 import connectDB from "./utilities/connection.js";
 
 dotenv.config();
@@ -20,7 +21,7 @@ app.use("/gameofcodes/games", gameRoutes);
 app.use("/gameofcodes/progress", progressRoutes);
 app.use("/gameofcodes/courses", courseRoutes);
 app.use("/gameofcodes/badges", badgeRoutes);
-
+app.use("/gameofcodes/planets", planetRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
